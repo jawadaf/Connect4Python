@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.header("Hvad er Connect 4")
+st.header("Hvad er Connect4?")
 st.write("Connect 4 er et klassisk og taktisk brætspil for " \
 "to spillere, hvor formålet er at få fire af sine egne brikker på " \
 "stribe - enten vandret, lodret eller diagonalt - før modstanderen " \
