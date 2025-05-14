@@ -1,8 +1,6 @@
 import Board as board
 
-current_player = 'X'
-
-def drop_piece(col):
+def drop_piece(col, current_player):
     for r in range(board.ROWS - 1, -1, -1):
         if board.board[r][col] == ' ':
             board.board[r][col] = current_player
