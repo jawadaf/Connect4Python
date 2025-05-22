@@ -9,7 +9,7 @@ while True:
     board.display_board()
     col = player.get_player_move()
 
-    row = rules.drop_piece(col)
+    row = rules.drop_piece1(col)
     if row == -1:
         print("Kolonnen er fuld. Vælg en anden.")
         continue

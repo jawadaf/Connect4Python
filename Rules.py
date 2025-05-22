@@ -1,6 +1,15 @@
 import Board as board
 
-def drop_piece(col, current_player):
+current_player = 'X'
+
+def drop_piece(col, current_player): # Til web
+    for r in range(board.ROWS - 1, -1, -1):
+        if board.board[r][col] == ' ':
+            board.board[r][col] = current_player
+            return r
+    return -1  # Kolonnen er fuld
+
+def drop_piece1(col): # Til konsol
     for r in range(board.ROWS - 1, -1, -1):
         if board.board[r][col] == ' ':
             board.board[r][col] = current_player
