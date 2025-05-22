@@ -1,6 +1,6 @@
 ROWS = 6
 COLS = 7
-board = [[' ' for _ in range(COLS)] for _ in range(ROWS)]
+board = [[' ' for _ in range(COLS)] for _ in range(ROWS)] # List Comprehension
 
 def initialize_board():
     for r in range(ROWS):

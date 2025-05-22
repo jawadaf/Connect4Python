@@ -5,7 +5,7 @@ import Rules as rules
 # Initialiser session state én gang
 if 'board' not in st.session_state:
     board.initialize_board()
-    st.session_state.board = [row.copy() for row in board.board]
+    st.session_state.board = [row.copy() for row in board.board] # List Comprehension
     st.session_state.current_player = 'X'
     st.session_state.game_over = False
     st.session_state.message = ""
@@ -17,7 +17,7 @@ st.title("Connect 4")
 
 # Funktion til at få spillerens navn baseret på symbol
 def get_player_name(symbol):
-    return "Rød" if symbol == 'X' else "Gul"
+    return "Rød" if symbol == 'X' else "Gul" # Ternary Operator
 
 # Kolonneknapper
 col_buttons = st.columns(board.COLS)
@@ -37,7 +37,7 @@ for i in range(board.COLS):
                 st.session_state.message = "Spillet ender uafgjort!"
                 st.session_state.game_over = True
             else:
-                st.session_state.current_player = 'O' if st.session_state.current_player == 'X' else 'X'
+                st.session_state.current_player = 'O' if st.session_state.current_player == 'X' else 'X' # Ternary Operator
 
 # Tegn brættet med st.columns
 for row in board.board:
