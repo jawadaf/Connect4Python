@@ -6,7 +6,6 @@ def om_os():
     st.write("**Teamet bag projektet:**")
     st.write("- Ali Selimi - Full-Stack Developer")
     st.write("- Jawad Ali Fakhreddin - Frontend Specialist")
-    st.write("- Mohammad Adan - Backend Developer")
     st.write("- Hamse Hassan - UI/UX Designer")
     st.write("\nVi arbejder sammen om at udvikle sjove og engagerende spiloplevelser.")
 
