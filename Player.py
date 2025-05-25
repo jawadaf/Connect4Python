@@ -1,6 +1,7 @@
 import Rules as rules
 import Board as board
 
+# Til WorkingProgram (konsolversion)
 def get_player_move():
     while True:
         try:
