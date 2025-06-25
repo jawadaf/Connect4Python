@@ -6,7 +6,7 @@ current_player = 'X'
 
 # Bruges i Connect4.py (webversion)
 def drop_piece(col, current_player): # forsøger at droppe en brik i kolonne col
-    for r in range(board.ROWS - 1, -1, -1): # Den starter oppefra og går ned
+    for r in range(board.ROWS - 1, -1, -1): # Den starter oppefra og går ned. range(start, stop, step)
         if board.board[r][col] == ' ': # Hvis den finder et tomt felt ' ', placerer den spillerens symbol der
             board.board[r][col] = current_player 
             return r # Returnerer rækkenummeret r hvor brikken blev placeret
@@ -21,7 +21,7 @@ def drop_piece1(col): # Næsten identisk med drop_piece, men bruger den globale 
     return -1  
 
 def count_consecutive(row, col, row_dir, col_dir): # Tæller hvor mange ens brikker (X eller O) der er på stribe i én bestemt retning
-    count = 0 # starter med 0 ens symboler i træk
+    count = 0 # starter med 0 ens symboler i træk. Tæller antallet af ens brikker i den retning
     symbol = board.board[row][col] # gemmer det symbol vi leder efter i denne retning f.eks. 'X' eller 'O'. Det er brikken som lige blev placeret (i check_win())
     r = row + row_dir # bevæger os et skridt i den ønskede retning. 
     c = col + col_dir # bevæger os et skridt i den ønskede retning. 

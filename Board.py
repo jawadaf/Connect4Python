@@ -12,7 +12,7 @@ def initialize_board(): # En funktion, der nulstiller brættet
 def display_board(): # Viser brættet i konsollen (ikke i Streamlit). Bruges kun i WorkingProgram.py
     print() # Laver en tom linje
     for row in board: # Går igennem hver række i brættet
-        print('|', end='') # Starter rækken med en lodret streg
+        print('|', end='') # Starter rækken med en lodret streg. end='' betyder 'ikke gå linje ned'
         for cell in row: # Går igennem hver celle i rækken
             print(f' {cell} |', end='') # Udskriver hver celle med mellemrum og streg
         print() # En ny linje

@@ -12,14 +12,14 @@ if 'board' not in st.session_state: # st.session_state er som en slags hukommels
     st.session_state.game_over = False # Spillet er igang
     st.session_state.message = "" # vise beskeder (vinder, uafgjort, fejl osv.).
 
-# Opdater board.board så dine eksisterende funktioner virker
+# Opdater board.board så mine eksisterende funktioner virker
 board.board = st.session_state.board
 
 # Funktion til at få spillerens navn baseret på symbol
 def get_player_name(symbol):
     return "Rød" if symbol == 'X' else "Gul" # Ternary Operator
 
-# Opretter 7 kolonner i Streamlit (fordi board.COLS = 7).
+# Opretter 7 kolonner i Streamlit (fordi board.COLS = 7). (knapper)
 col_buttons = st.columns(board.COLS)
 
 for i in range(board.COLS): # Loop igennem kolonnerne
@@ -51,6 +51,11 @@ for row in board.board: # går igennem hver række i board.board som er en 2D-li
         # .markdown(...): bruges til at vise HTML-indhold (emoji).
         # f"<div style='text-align: center; font-size: 28px'>{symbol}</div>": HTML-kode til: 1. centrere emoji 2. gøre emoji stor (28px)
         # unsafe_allow_html=True betyder, at Streamlit godt må tolke HTML – ellers bliver det bare vist som tekst.
+
+if cell == 'X':
+    return '🔴'
+else:
+    return '🟡'
 
 # Vis besked
 st.subheader(st.session_state.message)
