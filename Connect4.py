@@ -17,7 +17,7 @@ board.board = st.session_state.board
 
 # Funktion til at få spillerens navn baseret på symbol
 def get_player_name(symbol):
-    return "Rød" if symbol == 'X' else "Gul" # Ternary Operator
+    return "Red" if symbol == 'X' else "Yellow" # Ternary Operator
 
 # Opretter 7 kolonner i Streamlit (fordi board.COLS = 7). (knapper)
 col_buttons = st.columns(board.COLS)
@@ -29,13 +29,13 @@ for i in range(board.COLS): # Loop igennem kolonnerne
             row = rules.drop_piece(i, st.session_state.current_player) # Forsøg at droppe en brik i kolonne 'i'
             st.session_state.board = [row.copy() for row in board.board] # Brættet opdateres i session_state.
             if row == -1: # Hvis kolonnen er fyldt
-                st.session_state.message = "Kolonnen er fuld!"
+                st.session_state.message = "Column are full!"
             elif rules.check_win(row, i): # Tjekker om den seneste brik skaber en vinder...
                 player_name = get_player_name(st.session_state.current_player)
-                st.session_state.message = f"Spiller {player_name} vinder!" # Viser en vinderbesked
+                st.session_state.message = f"Player {player_name} winner!" # Viser en vinderbesked
                 st.session_state.game_over = True
             elif rules.is_draw(): # Hvis der ikke er nogen ledige felter = uafgjort
-                st.session_state.message = "Spillet ender uafgjort!"
+                st.session_state.message = "Game ends with draw!"
                 st.session_state.game_over = True
             else:
                 st.session_state.current_player = 'O' if st.session_state.current_player == 'X' else 'X' # Ternary Operator. Hvis ingen har vundet eller det er uafgjort, skift spiller.
@@ -56,7 +56,7 @@ for row in board.board: # går igennem hver række i board.board som er en 2D-li
 st.subheader(st.session_state.message)
 
 # Genstart-knap. Tømmer brættet. Nulstiller spiller, besked og game over-flag.
-if st.button("Genstart spil"):
+if st.button("Restart game"):
     board.initialize_board()
     st.session_state.board = [row.copy() for row in board.board]
     st.session_state.current_player = 'X'
