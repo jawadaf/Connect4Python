@@ -52,11 +52,6 @@ for row in board.board: # går igennem hver række i board.board som er en 2D-li
         # f"<div style='text-align: center; font-size: 28px'>{symbol}</div>": HTML-kode til: 1. centrere emoji 2. gøre emoji stor (28px)
         # unsafe_allow_html=True betyder, at Streamlit godt må tolke HTML – ellers bliver det bare vist som tekst.
 
-if cell == 'X':
-    return '🔴'
-else:
-    return '🟡'
-
 # Vis besked
 st.subheader(st.session_state.message)
 
